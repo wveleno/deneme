@@ -261,9 +261,133 @@ button,a,input{ -webkit-tap-highlight-color: transparent }
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+
+/* Son renk/kontrast düzeltmesi: koyu palet korunur */
+.promise-item{background:#253b2b!important;color:#f5f0e5!important;border:1px solid rgba(198,161,91,.32)!important}
+.promise-item h3{color:#f2e7cf!important}
+.promise-item p{color:#d6c6a4!important}
+.promise-icon{color:#c6a15b!important;border-color:rgba(198,161,91,.45)!important}
+.promise{gap:18px}
+
+/* Final polish: contact section — preserve Alas palette */
+.contact{position:relative;isolation:isolate;gap:clamp(28px,5vw,76px);padding:clamp(48px,6vw,82px) clamp(24px,5vw,72px) 34px;margin:0;background:radial-gradient(ellipse at 8% 0%,rgba(37,59,43,.48),transparent 42%),#29200f;color:#f5f0e5;border-top:1px solid rgba(198,161,91,.24);}
+.contact:before{content:"ALAS";position:absolute;z-index:-1;right:5%;top:14px;font:italic 100px/1 Georgia,serif;letter-spacing:.06em;color:rgba(245,240,229,.025);pointer-events:none}
+.contact>.contact-intro,.contact>div:first-child{position:relative}
+.contact h2{font-size:clamp(38px,4.2vw,58px);line-height:1.02;max-width:520px;margin:18px 0 20px;color:#f5f0e5}
+.contact h2 em{color:#c6a15b}
+.contact p{max-width:560px;color:#c9c1ad;line-height:1.9;font-size:14px}
+.contact .text-link{display:inline-flex;margin-top:12px;color:#d5b36d;border-bottom-color:rgba(198,161,91,.65)}
+.contact-details{border:1px solid rgba(198,161,91,.34);border-radius:3px;overflow:hidden;background:linear-gradient(145deg,rgba(37,59,43,.9),rgba(52,37,13,.96));box-shadow:0 18px 44px rgba(0,0,0,.12)}
+.contact-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:21px 23px;border-bottom:1px solid rgba(198,161,91,.23);font-size:13px;min-height:62px}
+.contact-row:last-child{border-bottom:0}
+.contact-row span:first-child{font-size:10px;letter-spacing:.17em;color:#c6a15b}
+.contact-row span:last-child{color:#f5f0e5;font-size:13px;font-weight:500}
+.contact-row a:hover,.contact-row span:last-child a:hover{color:#d7b36c}
+.address-card{position:relative;grid-column:1/-1;margin-top:0;padding:26px 28px;border:1px solid rgba(198,161,91,.4);background:linear-gradient(105deg,#253b2b 0%,#1d2b20 60%,#34270f 100%);color:#f5f0e5;box-shadow:inset 0 0 0 5px rgba(198,161,91,.035);border-radius:3px}
+.address-card:before{content:"";position:absolute;inset:8px;border:1px solid rgba(198,161,91,.16);pointer-events:none}
+.address-card>div,.address-card p,.address-card .button{position:relative;z-index:1}
+.address-card strong{font-family:Georgia,serif;font-size:22px;font-weight:400;color:#f5f0e5}
+.address-card p{margin-top:8px;color:#d2d2c4;font-size:13px}
+.address-card .button{flex:0 0 auto;padding:15px 22px}
+@media(max-width:850px){.contact{padding:52px 24px 28px;gap:28px}.contact-details{width:100%}.address-card{grid-column:auto}}
+@media(max-width:540px){.contact{padding:42px 18px 24px}.contact h2{font-size:40px}.contact-row{padding:17px 15px;gap:12px}.contact-row span:last-child{max-width:65%;overflow-wrap:anywhere}.address-card{padding:24px 20px}.address-card strong{font-size:21px}.address-card .button{width:100%}.contact:before{font-size:68px;right:7%;top:25px}}
+
+
+/* Contact refinement: lighter, calmer and more elegant; keep the original palette */
+.contact{padding:clamp(42px,5vw,68px) clamp(22px,4vw,58px) 24px!important;gap:clamp(26px,4vw,58px)!important;background:radial-gradient(ellipse at 10% 0%,rgba(37,59,43,.28),transparent 44%),#29200f!important;border-top:1px solid rgba(198,161,91,.16)!important}
+.contact h2{font-size:clamp(36px,3.7vw,52px)!important;line-height:1.04!important;margin:14px 0 16px!important;letter-spacing:-.035em!important}
+.contact p{font-size:13px!important;line-height:1.85!important;color:#cfc5af!important;max-width:500px!important}
+.contact .text-link{margin-top:8px!important;font-size:9px!important;letter-spacing:.15em!important}
+.contact-details{border-top:1px solid rgba(198,161,91,.32)!important;background:rgba(60,40,0,.18)!important}
+.contact-row{padding:15px 16px!important;border-bottom:1px solid rgba(198,161,91,.22)!important;align-items:center!important;font-size:12px!important;min-height:52px}
+.contact-row span:first-child{font-size:9px!important;letter-spacing:.16em!important;color:#c6a15b!important}
+.contact-row span:last-child{color:#f5f0e5!important}
+.contact-row a{transition:color .2s ease}
+.contact-row a:hover{color:#d9b96e!important}
+.address-card{margin-top:25px!important;padding:19px 22px!important;min-height:84px;background:rgba(37,59,43,.38)!important;border:1px solid rgba(198,161,91,.25)!important;outline:1px solid rgba(198,161,91,.08);outline-offset:-5px;gap:18px!important}
+.address-card strong{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#f5f0e5}
+.address-card p{font-size:12px!important;line-height:1.65!important;margin-top:5px!important;color:#cfc5af!important}
+.address-card .button{padding:12px 16px!important;font-size:9px!important;white-space:nowrap}
+@media(max-width:700px){.contact{padding:38px 20px 20px!important;gap:24px!important}.contact-row{padding:13px 14px!important}.address-card{padding:18px!important;flex-direction:column!important;align-items:stretch!important}.address-card .button{width:100%}}
+
 </style>
 <meta name="theme-color" content="#17251b">
-</head>
+<style>
+
+/* ALAS BURMA — ikinci referanstaki koyu renk katmanları */
+:root{--ink:#f2e7cf;--green:#203426;--cream:#2a210f;--paper:#382600;--gold:#c6a15b;--line:rgba(198,161,91,.30)}
+html,body{background:#2a210f!important;color:#f2e7cf}
+.topline,.footer{background:#171a12!important;color:#e9ddc3!important}
+.nav{background:#151d16!important;color:#f5f0e5!important}
+.hero-home,.page-hero{background:radial-gradient(ellipse at 76% 35%,#344a31 0,#243828 38%,#17251b 78%)!important;color:#fff8e9!important}
+.home-product-section,.page-section,.section:not(.story),.page-content{background:#2a210f!important;color:#f2e7cf!important}
+.product,.info-card,.contact-panel,.address-card,.faq-item,.feature-copy,.mini-card,.promise-card,.link-list,.contact-row,.address-card,.faq-photo-card{background:#382600!important;color:#f2e7cf!important;border-color:rgba(198,161,91,.32)!important}
+.product-info p,.section-head p,.feature-copy p,.page-section p,.info-card p,.faq-item p,.contact-panel p,.mini-card p{color:#d6c6a4!important}
+.product-info h3,.section h2,.section h3,.page-section h2,.page-section h3,.feature-copy h2,.feature-copy h3{color:#f4e8cf!important}
+.story,.order-banner{background:#203426!important;color:#fff8e9!important}
+.story-visual{background:radial-gradient(ellipse at center,#62512b 0,#35442d 42%,#203426 78%)!important}
+.ticker{background:#342600!important;color:#e4d1a3!important;border-top:1px solid rgba(198,161,91,.22);border-bottom:1px solid rgba(198,161,91,.22)}
+.product-art,.faq-photo,.photo-wrap{background:#211b12!important}
+.faq-layout,.faq-list{background:transparent!important}
+.faq-item summary,.faq-item button,.link-list a,.contact-row,.footer a{color:#f2e7cf!important}
+.dropdown-menu{background:#211a0b!important;color:#f2e7cf!important;border-color:rgba(198,161,91,.42)!important}
+.nav-dropdown a:hover,.navlinks a:hover{color:#d7b36c!important}
+.button,.nav-cta{background:#c6a15b!important;color:#191b13!important;border-color:#c6a15b!important}
+.button-outline{color:#f2e7cf!important;border-color:rgba(245,240,229,.45)!important}
+.order-banner{border:1px solid rgba(198,161,91,.35)!important}
+/* Renk katmanları dışında görsel, içerik ve yerleşim korunur. */
+
+
+/* Contact refinement: lighter, calmer and more elegant; keep the original palette */
+.contact{padding:clamp(42px,5vw,68px) clamp(22px,4vw,58px) 24px!important;gap:clamp(26px,4vw,58px)!important;background:radial-gradient(ellipse at 10% 0%,rgba(37,59,43,.28),transparent 44%),#29200f!important;border-top:1px solid rgba(198,161,91,.16)!important}
+.contact h2{font-size:clamp(36px,3.7vw,52px)!important;line-height:1.04!important;margin:14px 0 16px!important;letter-spacing:-.035em!important}
+.contact p{font-size:13px!important;line-height:1.85!important;color:#cfc5af!important;max-width:500px!important}
+.contact .text-link{margin-top:8px!important;font-size:9px!important;letter-spacing:.15em!important}
+.contact-details{border-top:1px solid rgba(198,161,91,.32)!important;background:rgba(60,40,0,.18)!important}
+.contact-row{padding:15px 16px!important;border-bottom:1px solid rgba(198,161,91,.22)!important;align-items:center!important;font-size:12px!important;min-height:52px}
+.contact-row span:first-child{font-size:9px!important;letter-spacing:.16em!important;color:#c6a15b!important}
+.contact-row span:last-child{color:#f5f0e5!important}
+.contact-row a{transition:color .2s ease}
+.contact-row a:hover{color:#d9b96e!important}
+.address-card{margin-top:25px!important;padding:19px 22px!important;min-height:84px;background:rgba(37,59,43,.38)!important;border:1px solid rgba(198,161,91,.25)!important;outline:1px solid rgba(198,161,91,.08);outline-offset:-5px;gap:18px!important}
+.address-card strong{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#f5f0e5}
+.address-card p{font-size:12px!important;line-height:1.65!important;margin-top:5px!important;color:#cfc5af!important}
+.address-card .button{padding:12px 16px!important;font-size:9px!important;white-space:nowrap}
+@media(max-width:700px){.contact{padding:38px 20px 20px!important;gap:24px!important}.contact-row{padding:13px 14px!important}.address-card{padding:18px!important;flex-direction:column!important;align-items:stretch!important}.address-card .button{width:100%}}
+
+
+/* Refined contact area — original forest, coffee, gold and cream palette retained */
+.contact-section{padding-top:clamp(34px,5vw,70px)!important;padding-bottom:clamp(36px,5vw,66px)!important;background:#29200f!important;position:relative;overflow:hidden}
+.contact-section:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-130px;top:-220px;border:1px solid rgba(198,161,91,.10);box-shadow:0 0 0 28px rgba(198,161,91,.025),0 0 0 58px rgba(198,161,91,.018);pointer-events:none}
+.contact-refined{position:relative;z-index:1;display:grid!important;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;align-items:center!important;gap:clamp(30px,6vw,92px)!important;padding:clamp(12px,2vw,24px) clamp(0px,2vw,26px) 28px!important;background:transparent!important;border:0!important}
+.contact-intro .eyebrow{display:flex;align-items:center;gap:12px;color:#c6a15b!important;font-size:9px!important;letter-spacing:.22em!important}
+.eyebrow-line{display:inline-block;width:30px;height:1px;background:#c6a15b}
+.contact-refined h2{font-size:clamp(36px,4.2vw,58px)!important;line-height:.99!important;margin:20px 0 20px!important;max-width:500px}
+.contact-refined p{max-width:420px!important;font-size:13px!important;line-height:1.9!important;color:#d6c6a4!important}
+.contact-note{display:flex;align-items:center;gap:10px;margin-top:25px;color:#cdbb92;font-size:11px;letter-spacing:.04em}
+.note-star{color:#c6a15b;font-size:17px}
+.contact-details-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;border:0!important;background:transparent!important}
+.contact-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:154px;padding:20px 20px 18px;border:1px solid rgba(198,161,91,.27);border-radius:3px;background:linear-gradient(145deg,rgba(60,40,0,.78),rgba(43,33,15,.94));text-decoration:none;color:#f5f0e5!important;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.contact-tile:hover{transform:translateY(-3px);border-color:rgba(198,161,91,.7);background:linear-gradient(145deg,rgba(66,48,12,.9),rgba(32,52,38,.8))}
+.tile-icon{display:grid;place-items:center;width:30px;height:30px;border:1px solid rgba(198,161,91,.42);border-radius:50%;color:#d6b36c;font-size:14px;margin-bottom:18px}
+.tile-label{font-size:9px;letter-spacing:.18em;color:#c6a15b;margin-bottom:7px}
+.contact-tile strong{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:400;line-height:1.3;color:#f5f0e5}
+.contact-tile small{margin-top:6px;color:#bfb092;font-size:10px;line-height:1.5}
+.tile-wide{grid-column:1/-1;min-height:94px;flex-direction:row;align-items:center;gap:15px;padding:17px 20px;background:linear-gradient(100deg,rgba(32,52,38,.92),rgba(44,35,17,.96))}
+.tile-wide .tile-icon{flex:0 0 30px;margin:0}
+.tile-copy{display:flex;flex-direction:column;align-items:flex-start}
+.tile-wide .tile-label{margin-bottom:4px}
+.tile-wide strong{font-size:18px}
+.tile-arrow{margin-left:auto;color:#d6b36c;font-size:20px}
+.address-card-refined{margin-top:8px!important;padding:22px 26px!important;min-height:unset!important;display:flex;align-items:center;justify-content:space-between;gap:24px;background:linear-gradient(100deg,rgba(32,52,38,.92),rgba(32,52,38,.55) 60%,rgba(60,40,0,.4))!important;border:1px solid rgba(198,161,91,.26)!important;outline:0!important;border-radius:3px}
+.address-kicker{display:block;color:#c6a15b;font-size:9px;letter-spacing:.2em;margin-bottom:8px}
+.address-card-refined strong{display:block;font-size:19px!important;font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;line-height:1.35}
+.address-card-refined p{margin:5px 0 0!important;font-size:11px!important;color:#cfc5af!important}
+.address-card-refined .button{padding:13px 18px!important;min-width:150px;text-align:center}
+@media(max-width:760px){.contact-refined{grid-template-columns:1fr!important;gap:28px!important;padding:8px 0 20px!important}.contact-refined h2{font-size:clamp(37px,10vw,48px)!important}.contact-details-grid{grid-template-columns:1fr 1fr!important;gap:9px!important}.contact-tile{min-height:145px;padding:15px!important}.contact-tile strong{font-size:15px}.tile-wide{grid-column:1/-1;min-height:88px;flex-direction:row!important}.address-card-refined{align-items:flex-start!important;flex-direction:column!important;padding:20px!important}.address-card-refined .button{width:100%}}
+@media(max-width:390px){.contact-details-grid{grid-template-columns:1fr!important}.tile-wide{grid-column:auto}.contact-tile{min-height:unset}.tile-icon{margin-bottom:12px}}
+
+</style></head>
 <body>
 <div class="topline">Gelenekten gelen ustalık · Her telinde emek</div>
 <header class="nav" id="site-nav">
@@ -358,7 +482,7 @@ button,a,input{ -webkit-tap-highlight-color: transparent }
   </div>
 </div>
 </section>
-<section class="section" id="iletisim"><div class="contact"><div><div class="eyebrow">Bize ulaşın</div><h2 class="serif">Tatlı bir merhaba<br><em>demeye bekleriz.</em></h2><p>Sipariş ve güncel fiyat bilgisi için bizi arayabilir ya da mesaj gönderebilirsin. Yol tarifi için konum bağlantısını kullanabilirsin.</p><a class="text-link" href="https://wa.me/905528529729?text=Merhaba%2C%20Alas%20Burma%20Kadayıf%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp mesajı gönder ↗</a></div><div class="contact-details"><div class="contact-row"><span>İşletme</span><span>Alas Burma Kadayıf</span></div><div class="contact-row"><span>Telefon</span><span><a href="tel:+905528529729">+90 552 852 97 29 ↗</a></span></div><div class="contact-row"><span>Adres</span><span><a class="address-link" href="https://maps.app.goo.gl/CEDKcUaXCpn2TSRh6" target="_blank" rel="noopener">Haritada görüntüle ↗</a></span></div><div class="contact-row"><span>WhatsApp</span><span><a href="https://wa.me/905528529729?text=Merhaba%2C%20Alas%20Burma%20Kadayıf%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Mesaj gönder ↗</a></span></div></div></div><div class="address-card"><div><strong>Alas Burma Kadayıf’a yol tarifi</strong><p>Konumumuzu haritada açarak kolayca bize ulaşabilirsiniz.</p></div><a class="button" href="https://maps.app.goo.gl/CEDKcUaXCpn2TSRh6" target="_blank" rel="noopener">Adresi Gör ↗</a></div></section>
+<section class="section contact-section" id="iletisim"><div class="contact contact-refined"><div class="contact-intro"><div class="eyebrow"><span class="eyebrow-line"></span> BİZE ULAŞIN</div><h2 class="serif">Tatlı bir merhaba<br><em>demeye bekleriz.</em></h2><p>Bir sipariş, özel bir gün ya da yalnızca güzel bir tatlı hakkında konuşmak için bize ulaş. Sana yardımcı olmaktan mutluluk duyarız.</p><div class="contact-note"><span class="note-star">✦</span><span>Gelenekten gelen ustalık, samimi bir karşılama.</span></div></div><div class="contact-details contact-details-grid"><a class="contact-tile" href="tel:+905528529729"><span class="tile-icon">↗</span><span class="tile-label">TELEFON</span><strong>+90 552 852 97 29</strong><small>Hemen ara</small></a><a class="contact-tile" href="https://wa.me/905528529729?text=Merhaba%2C%20Alas%20Burma%20Kadayıf%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><span class="tile-icon">✳</span><span class="tile-label">WHATSAPP</span><strong>Bize mesaj gönder</strong><small>Sorunu veya siparişini ilet</small></a><a class="contact-tile tile-wide" href="https://maps.app.goo.gl/CEDKcUaXCpn2TSRh6" target="_blank" rel="noopener"><span class="tile-icon">⌖</span><span class="tile-copy"><span class="tile-label">KONUM</span><strong>Yol tarifini görüntüle</strong><small>Haritada açıp kolayca ulaş</small></span><span class="tile-arrow">↗</span></a></div></div><div class="address-card address-card-refined"><div><span class="address-kicker">SENİ BEKLİYORUZ</span><strong>Bir kahve molasına eşlik edecek çıtır bir lezzet.</strong><p>Alas Burma Kadayıf’ı keşfet, sevdiklerinle paylaşacağın tatlı anlara yer aç.</p></div><a class="button" href="urunler.html">ÜRÜNÜ KEŞFET ↗</a></div></section>
 </main><footer class="footer"><a class="brand" href="index.html"><span class="brand-mark"><svg class="brand-logo" viewBox="0 0 72 72" role="img" aria-label="Alas Burma Kadayıf amblemi" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="goldLogo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1d18d"/><stop offset=".55" stop-color="#c6a15b"/><stop offset="1" stop-color="#9d7134"/></linearGradient></defs><path d="M36 5 C31 14 20 15 14 27 C8 39 14 53 25 58 L36 64 L47 58 C58 53 64 39 58 27 C52 15 41 14 36 5Z" fill="none" stroke="url(#goldLogo)" stroke-width="1.6"/><path d="M36 16 L19 51 L26 47 L36 27 L46 47 L53 51Z" fill="none" stroke="url(#goldLogo)" stroke-width="2.1" stroke-linejoin="round"/><path d="M26 43 Q36 37 46 43 M28 49 Q36 45 44 49" fill="none" stroke="url(#goldLogo)" stroke-width="1.3"/><path d="M36 5 L32 12 L36 10 L40 12Z M13 29 L20 28 L17 33Z M59 29 L52 28 L55 33Z" fill="url(#goldLogo)"/><circle cx="36" cy="19" r="2" fill="url(#goldLogo)"/><path d="M10 43 Q4 36 11 31 M62 43 Q68 36 61 31" fill="none" stroke="url(#goldLogo)" stroke-width="1.3" stroke-linecap="round"/></svg></span><span><span class="brand-name">ALAS <b>BURMA</b></span><span class="brand-sub">Kadayıf • Tatlı Ustalığı</span></span></a><div style="display:flex;flex-direction:column;gap:8px;max-width:310px"><small>Gelenekten gelen ustalık, her telinde özen.</small><small>Burma kadayıfın en tatlı hâli.</small></div><div style="text-align:right;display:flex;flex-direction:column;gap:8px"><span style="color:#d6b36c;font-size:12px;letter-spacing:.12em">CEO · Yusuf Ensar Alas</span><small>© 2026 Alas Burma Kadayıf · Tüm hakları saklıdır.</small></div><div class="footer-nav"><a href="index.html">Anasayfa</a><a href="hakkimizda.html">Hakkımızda</a><a href="kurumsal.html">Kurumsal</a><a href="urunler.html">Ürünler</a><a href="sss.html">Sık Sorulanlar</a><a href="iletisim.html">İletişim</a></div></footer><a class="wa-float" href="https://wa.me/905528529729?text=Merhaba%2C%20Alas%20Burma%20Kadayıf%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">☏ WhatsApp Sipariş</a>
 <script>
 function searchSite(event){

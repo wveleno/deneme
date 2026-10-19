@@ -196,8 +196,79 @@ button,a,input{ -webkit-tap-highlight-color: transparent }
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+
+/* İletişim alanı: referans koyu kahve/yeşil paleti ve okunaklı kontrast */
+.contact-panel{background:#253b2b!important;color:#f5f0e5!important;border-color:rgba(198,161,91,.32)!important}
+.contact-panel h2{color:#f4e8cf!important}
+.contact-panel p{color:#d6c6a4!important}
+.contact-panel .eyebrow{color:#c6a15b!important}
+.link-list a{background:#382600!important;color:#f2e7cf!important;border-color:rgba(198,161,91,.38)!important}
+.link-list a span{color:#f2e7cf!important}
+.address-card{background:#253b2b!important;color:#f5f0e5!important;border-color:rgba(198,161,91,.4)!important}
+.address-card p,.address-card h3{color:#f2e7cf!important}
+
+/* Contact refinement: lighter, calmer and more elegant; keep the original palette */
+.contact{padding:clamp(42px,5vw,68px) clamp(22px,4vw,58px) 24px!important;gap:clamp(26px,4vw,58px)!important;background:radial-gradient(ellipse at 10% 0%,rgba(37,59,43,.28),transparent 44%),#29200f!important;border-top:1px solid rgba(198,161,91,.16)!important}
+.contact h2{font-size:clamp(36px,3.7vw,52px)!important;line-height:1.04!important;margin:14px 0 16px!important;letter-spacing:-.035em!important}
+.contact p{font-size:13px!important;line-height:1.85!important;color:#cfc5af!important;max-width:500px!important}
+.contact .text-link{margin-top:8px!important;font-size:9px!important;letter-spacing:.15em!important}
+.contact-details{border-top:1px solid rgba(198,161,91,.32)!important;background:rgba(60,40,0,.18)!important}
+.contact-row{padding:15px 16px!important;border-bottom:1px solid rgba(198,161,91,.22)!important;align-items:center!important;font-size:12px!important;min-height:52px}
+.contact-row span:first-child{font-size:9px!important;letter-spacing:.16em!important;color:#c6a15b!important}
+.contact-row span:last-child{color:#f5f0e5!important}
+.contact-row a{transition:color .2s ease}
+.contact-row a:hover{color:#d9b96e!important}
+.address-card{margin-top:25px!important;padding:19px 22px!important;min-height:84px;background:rgba(37,59,43,.38)!important;border:1px solid rgba(198,161,91,.25)!important;outline:1px solid rgba(198,161,91,.08);outline-offset:-5px;gap:18px!important}
+.address-card strong{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#f5f0e5}
+.address-card p{font-size:12px!important;line-height:1.65!important;margin-top:5px!important;color:#cfc5af!important}
+.address-card .button{padding:12px 16px!important;font-size:9px!important;white-space:nowrap}
+@media(max-width:700px){.contact{padding:38px 20px 20px!important;gap:24px!important}.contact-row{padding:13px 14px!important}.address-card{padding:18px!important;flex-direction:column!important;align-items:stretch!important}.address-card .button{width:100%}}
+
 </style><meta name="theme-color" content="#17251b">
-</head><body><div class="topline">Gelenekten gelen ustalık · Her telinde emek</div>
+<style>
+
+/* ALAS BURMA — ikinci referanstaki koyu renk katmanları */
+:root{--ink:#f2e7cf;--green:#203426;--cream:#2a210f;--paper:#382600;--gold:#c6a15b;--line:rgba(198,161,91,.30)}
+html,body{background:#2a210f!important;color:#f2e7cf}
+.topline,.footer{background:#171a12!important;color:#e9ddc3!important}
+.nav{background:#151d16!important;color:#f5f0e5!important}
+.hero-home,.page-hero{background:radial-gradient(ellipse at 76% 35%,#344a31 0,#243828 38%,#17251b 78%)!important;color:#fff8e9!important}
+.home-product-section,.page-section,.section:not(.story),.page-content{background:#2a210f!important;color:#f2e7cf!important}
+.product,.info-card,.contact-panel,.address-card,.faq-item,.feature-copy,.mini-card,.promise-card,.link-list,.contact-row,.address-card,.faq-photo-card{background:#382600!important;color:#f2e7cf!important;border-color:rgba(198,161,91,.32)!important}
+.product-info p,.section-head p,.feature-copy p,.page-section p,.info-card p,.faq-item p,.contact-panel p,.mini-card p{color:#d6c6a4!important}
+.product-info h3,.section h2,.section h3,.page-section h2,.page-section h3,.feature-copy h2,.feature-copy h3{color:#f4e8cf!important}
+.story,.order-banner{background:#203426!important;color:#fff8e9!important}
+.story-visual{background:radial-gradient(ellipse at center,#62512b 0,#35442d 42%,#203426 78%)!important}
+.ticker{background:#342600!important;color:#e4d1a3!important;border-top:1px solid rgba(198,161,91,.22);border-bottom:1px solid rgba(198,161,91,.22)}
+.product-art,.faq-photo,.photo-wrap{background:#211b12!important}
+.faq-layout,.faq-list{background:transparent!important}
+.faq-item summary,.faq-item button,.link-list a,.contact-row,.footer a{color:#f2e7cf!important}
+.dropdown-menu{background:#211a0b!important;color:#f2e7cf!important;border-color:rgba(198,161,91,.42)!important}
+.nav-dropdown a:hover,.navlinks a:hover{color:#d7b36c!important}
+.button,.nav-cta{background:#c6a15b!important;color:#191b13!important;border-color:#c6a15b!important}
+.button-outline{color:#f2e7cf!important;border-color:rgba(245,240,229,.45)!important}
+.order-banner{border:1px solid rgba(198,161,91,.35)!important}
+/* Renk katmanları dışında görsel, içerik ve yerleşim korunur. */
+
+
+/* Contact refinement: lighter, calmer and more elegant; keep the original palette */
+.contact{padding:clamp(42px,5vw,68px) clamp(22px,4vw,58px) 24px!important;gap:clamp(26px,4vw,58px)!important;background:radial-gradient(ellipse at 10% 0%,rgba(37,59,43,.28),transparent 44%),#29200f!important;border-top:1px solid rgba(198,161,91,.16)!important}
+.contact h2{font-size:clamp(36px,3.7vw,52px)!important;line-height:1.04!important;margin:14px 0 16px!important;letter-spacing:-.035em!important}
+.contact p{font-size:13px!important;line-height:1.85!important;color:#cfc5af!important;max-width:500px!important}
+.contact .text-link{margin-top:8px!important;font-size:9px!important;letter-spacing:.15em!important}
+.contact-details{border-top:1px solid rgba(198,161,91,.32)!important;background:rgba(60,40,0,.18)!important}
+.contact-row{padding:15px 16px!important;border-bottom:1px solid rgba(198,161,91,.22)!important;align-items:center!important;font-size:12px!important;min-height:52px}
+.contact-row span:first-child{font-size:9px!important;letter-spacing:.16em!important;color:#c6a15b!important}
+.contact-row span:last-child{color:#f5f0e5!important}
+.contact-row a{transition:color .2s ease}
+.contact-row a:hover{color:#d9b96e!important}
+.address-card{margin-top:25px!important;padding:19px 22px!important;min-height:84px;background:rgba(37,59,43,.38)!important;border:1px solid rgba(198,161,91,.25)!important;outline:1px solid rgba(198,161,91,.08);outline-offset:-5px;gap:18px!important}
+.address-card strong{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-weight:400;color:#f5f0e5}
+.address-card p{font-size:12px!important;line-height:1.65!important;margin-top:5px!important;color:#cfc5af!important}
+.address-card .button{padding:12px 16px!important;font-size:9px!important;white-space:nowrap}
+@media(max-width:700px){.contact{padding:38px 20px 20px!important;gap:24px!important}.contact-row{padding:13px 14px!important}.address-card{padding:18px!important;flex-direction:column!important;align-items:stretch!important}.address-card .button{width:100%}}
+
+</style></head><body><div class="topline">Gelenekten gelen ustalık · Her telinde emek</div>
 <header class="nav" id="site-nav">
   <a class="brand" href="index.html" aria-label="Alas Burma Kadayıf ana sayfa"><span class="brand-mark"><svg class="brand-logo" viewBox="0 0 72 72" role="img" aria-label="Alas Burma Kadayıf amblemi" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="goldLogo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1d18d"/><stop offset=".55" stop-color="#c6a15b"/><stop offset="1" stop-color="#9d7134"/></linearGradient></defs><path d="M36 5 C31 14 20 15 14 27 C8 39 14 53 25 58 L36 64 L47 58 C58 53 64 39 58 27 C52 15 41 14 36 5Z" fill="none" stroke="url(#goldLogo)" stroke-width="1.6"/><path d="M36 16 L19 51 L26 47 L36 27 L46 47 L53 51Z" fill="none" stroke="url(#goldLogo)" stroke-width="2.1" stroke-linejoin="round"/><path d="M26 43 Q36 37 46 43 M28 49 Q36 45 44 49" fill="none" stroke="url(#goldLogo)" stroke-width="1.3"/><path d="M36 5 L32 12 L36 10 L40 12Z M13 29 L20 28 L17 33Z M59 29 L52 28 L55 33Z" fill="url(#goldLogo)"/><circle cx="36" cy="19" r="2" fill="url(#goldLogo)"/><path d="M10 43 Q4 36 11 31 M62 43 Q68 36 61 31" fill="none" stroke="url(#goldLogo)" stroke-width="1.3" stroke-linecap="round"/></svg></span><span><span class="brand-name">ALAS <b>BURMA</b></span><span class="brand-sub">Kadayıf • Tatlı Ustalığı</span></span></a>
   <button class="mobile-menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false"><span class="menu-glyph" aria-hidden="true">☰</span><span>Menü</span></button>
