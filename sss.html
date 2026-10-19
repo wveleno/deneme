@@ -41,11 +41,167 @@
 .dropdown-menu a{position:relative;z-index:1}
 @media(max-width:850px){.nav-dropdown{align-self:auto}.nav-dropdown::after{display:none}.dropdown-menu{position:absolute!important;top:calc(100% - 1px)!important;left:0!important;right:auto!important;width:min(280px,calc(100vw - 36px));z-index:220!important}}
 
+
+
+/* Mobile-first usability polish: compact navigation, no horizontal overflow, touch-friendly controls */
+.mobile-menu-toggle{display:none;border:1px solid rgba(221,194,139,.42);border-radius:999px;background:#c6a15b;color:#20190b;font:700 12px Arial,sans-serif;padding:11px 14px;align-items:center;justify-content:center;gap:8px;cursor:pointer;white-space:nowrap}
+.mobile-menu-toggle .menu-glyph{font-size:16px;line-height:1}
+img,svg,video{max-width:100%}
+body{overflow-x:hidden}
+main,header,footer,section,nav,form{min-width:0}
+button,a,input{ -webkit-tap-highlight-color: transparent }
+@media(max-width:760px){
+  html{scroll-padding-top:14px}
+  .topline{font-size:8px;letter-spacing:.12em;padding:8px 10px;line-height:1.45}
+  .nav#site-nav,.nav{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand toggle" "search search" "links links";align-items:center;gap:12px;padding:13px 16px 14px;border-radius:0 0 16px 16px;border-left:0;border-right:0;min-height:0;backdrop-filter:blur(12px)}
+  .nav .brand{grid-area:brand;min-width:0;gap:8px;max-width:100%}
+  .nav .brand-mark{width:38px;height:38px;flex:0 0 38px}
+  .nav .brand-name{font-size:15px;letter-spacing:.09em;white-space:nowrap}
+  .nav .brand-sub{font-size:6px;letter-spacing:.15em;white-space:nowrap}
+  .mobile-menu-toggle{grid-area:toggle;display:inline-flex;min-height:42px}
+  .nav-search{grid-area:search;display:flex;width:100%;max-width:none;margin:0;padding:4px 5px 4px 13px;min-height:42px}
+  .nav-search input{font-size:14px;min-height:32px}
+  .nav-search button{width:34px;height:34px;flex-basis:34px}
+  .navlinks{grid-area:links;display:none!important;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:100%;max-height:calc(100dvh - 190px);overflow-y:auto;overflow-x:hidden;padding:7px 0 0;margin:0;border-top:1px solid rgba(198,161,91,.24);white-space:normal}
+  .nav.menu-open .navlinks{display:flex!important}
+  .navlinks>a,.navlinks>.nav-dropdown>.dropdown-trigger{display:flex!important;width:100%;align-items:center;justify-content:space-between;min-height:46px;padding:12px 10px;font-size:13px;white-space:normal;border-bottom:1px solid rgba(198,161,91,.13)}
+  .nav-dropdown{display:block!important;position:relative;align-self:stretch;width:100%;height:auto;flex:none}
+  .nav-dropdown::after{display:none!important}
+  .dropdown-menu,.nav .dropdown-menu{display:none;position:static!important;inset:auto!important;top:auto!important;left:auto!important;right:auto!important;width:100%!important;min-width:0!important;margin:0!important;padding:5px 8px 8px!important;border-radius:10px;box-shadow:none;background:rgba(0,0,0,.17);border:1px solid rgba(198,161,91,.18);}
+  .nav-dropdown.open .dropdown-menu{display:block!important}
+  .dropdown-menu a{min-height:42px;display:flex;align-items:center;padding:11px 12px;font-size:12px;border-radius:6px}
+  .hero:not(.hero-home){grid-template-columns:minmax(0,1fr);min-height:0;padding:48px 22px 34px;gap:20px}
+  .hero:not(.hero-home) h1{font-size:clamp(43px,11vw,56px);overflow-wrap:break-word}
+  .hero:not(.hero-home) .hero-art{min-height:300px;width:100%;max-width:100%;overflow:hidden}
+  .section,.page-section{padding:52px 20px!important}
+  .section-head{margin-bottom:28px;max-width:100%}
+  h2{font-size:clamp(31px,8.5vw,42px);overflow-wrap:break-word}
+  .section-head p,.page-hero p{font-size:14px;line-height:1.8}
+  .hero-home{grid-template-columns:minmax(0,1fr);min-height:0;gap:18px;padding:44px 21px 30px}
+  .hero-home:before{inset:9px}
+  .hero-home .hero-content{width:100%;max-width:100%}
+  .hero-home .eyebrow{font-size:9px;letter-spacing:.17em;gap:8px;line-height:1.7}
+  .hero-home .eyebrow:before{width:20px;flex:0 0 20px}
+  .hero-home h1{font-size:clamp(42px,11.5vw,56px);line-height:1.02;letter-spacing:-.045em;margin:20px 0 17px;max-width:100%}
+  .hero-home .hero-copy{font-size:14px;line-height:1.8}
+  .hero-home .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:22px}
+  .hero-home .hero-actions a,.hero-actions .button,.hero-actions .button-outline{width:100%;min-height:47px;padding:13px 15px;text-align:center;line-height:1.4;font-size:10px;letter-spacing:.07em}
+  .hero-home .hero-note{gap:8px 13px;font-size:9px;line-height:1.5;margin-top:21px}
+  .hero-home .hero-art{height:clamp(300px,95vw,410px);min-height:0;width:100%;max-width:100%;margin:0 auto;overflow:visible}
+  .hero-photo-frame{width:83%;height:100%;border-width:5px;border-radius:47% 47% 8px 8px;transform:rotate(-1deg)}
+  .hero-photo-frame img{object-position:center 50%}
+  .hero-round-seal{width:76px;height:76px;right:0;top:3%;padding:8px;font-size:6.5px;letter-spacing:.08em}
+  .hero-round-seal b{font-size:15px}
+  .hero-photo-caption{left:13px;right:13px;bottom:15px}
+  .hero-photo-caption small{font-size:8px;letter-spacing:.14em}
+  .hero-photo-caption strong{font-size:clamp(23px,6vw,29px)}
+  .ticker{display:flex;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;gap:20px;padding:14px 20px;font-size:8px;letter-spacing:.1em;scrollbar-width:none}
+  .ticker::-webkit-scrollbar{display:none}
+  .home-product-section{padding:58px 18px 65px}
+  .home-product-section:before{right:10px;top:18px;font-size:70px}
+  .home-product-section .section-head{margin-bottom:25px}
+  .home-product-section .section-head h2{font-size:clamp(32px,8.5vw,42px)}
+  .home-product-section .product{display:grid;grid-template-columns:minmax(0,1fr)!important;width:100%;max-width:100%;border-radius:7px}
+  .home-product-section .product-art{height:clamp(250px,72vw,330px);min-height:0;width:100%}
+  .home-product-section .product-tag{top:13px;left:13px;padding:8px 10px;font-size:8px;max-width:calc(100% - 26px)}
+  .home-product-section .product-info{padding:26px 21px 28px;min-width:0}
+  .home-product-section .product-info h3{font-size:clamp(32px,9vw,39px);line-height:1.05}
+  .home-product-section .product-info p{font-size:14px;line-height:1.8}
+  .product-highlights{gap:7px;margin-bottom:22px}
+  .product-highlights span{font-size:8px;padding:8px 9px}
+  .product-actions{display:flex;flex-direction:column;align-items:stretch;gap:15px;width:100%}
+  .product-actions .button{width:100%;text-align:center;min-height:47px}
+  .product-actions .text-link{align-self:flex-start;line-height:1.6}
+  .products{grid-template-columns:minmax(0,1fr)!important;gap:15px}
+  .product{min-width:0;width:100%;padding:10px}
+  .product-art{height:clamp(230px,68vw,300px);min-height:0!important}
+  .product-info{padding:16px 8px 10px}
+  .product-info h3{font-size:25px}
+  .story{grid-template-columns:minmax(0,1fr)!important;min-width:0}
+  .story-visual{min-height:270px!important;padding:24px 16px;overflow:hidden}
+  .story-emblem{width:min(220px,72vw);height:min(220px,72vw);min-width:0;padding:23px}
+  .story-emblem .brand-logo{width:68px;height:68px}
+  .story-emblem-label strong{font-size:19px}
+  .story-copy{padding:39px 23px}
+  .story-copy h2{font-size:clamp(32px,9vw,42px)}
+  .story-copy p{font-size:14px;line-height:1.85}
+  .promise{grid-template-columns:minmax(0,1fr)!important;gap:10px}
+  .promise-item{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:start;column-gap:14px;text-align:left;padding:18px 15px}
+  .promise-icon{width:48px;height:48px;font-size:23px;grid-row:span 2;margin:0}
+  .promise h3{font-size:20px;margin:2px 0 6px;line-height:1.25}
+  .promise p{font-size:13px;line-height:1.7;margin:0}
+  .order-banner{margin:0 14px 44px;padding:40px 20px;border-radius:5px}
+  .order-banner:before{inset:8px}
+  .order-banner:after{font-size:76px;right:4%;top:1%}
+  .order-banner h2{font-size:clamp(30px,8vw,39px);line-height:1.08}
+  .order-banner p{font-size:13px;line-height:1.75}
+  .order-banner .button{max-width:100%;width:100%;min-height:47px;font-size:10px;padding:13px 12px}
+  .contact,.contact-page-grid{grid-template-columns:minmax(0,1fr)!important;gap:26px}
+  .contact h2{font-size:clamp(33px,9vw,43px)}
+  .contact-row{display:grid;grid-template-columns:minmax(0,1fr);gap:7px;padding:15px 0;font-size:13px;overflow-wrap:anywhere}
+  .contact-row span:last-child{text-align:left}
+  .address-card{padding:18px;gap:14px;margin-top:23px}
+  .address-card .button{width:100%;text-align:center}
+  .page-hero{padding:47px 22px 38px}
+  .page-hero:after{inset:8px}
+  .page-hero .eyebrow{font-size:9px;letter-spacing:.15em;overflow-wrap:anywhere}
+  .page-hero h1{font-size:clamp(38px,10vw,49px);line-height:1.03;letter-spacing:-.045em;margin:18px 0}
+  .page-hero p{font-size:14px;line-height:1.8}
+  .page-grid{grid-template-columns:minmax(0,1fr)!important;gap:12px}
+  .info-card{padding:21px}
+  .info-card h3{font-size:22px}
+  .photo-feature{grid-template-columns:minmax(0,1fr)!important}
+  .photo-feature .photo-wrap,.photo-feature img{min-height:0;height:clamp(240px,70vw,320px);width:100%}
+  .photo-feature .feature-copy{padding:34px 23px}
+  .photo-feature .feature-copy h2{font-size:clamp(32px,8.5vw,42px)}
+  .photo-feature .feature-copy p{font-size:14px;line-height:1.8}
+  .link-list a{gap:12px;padding:14px;font-size:12px;line-height:1.5}
+  .page-faq details{padding:17px!important;border-radius:12px;margin-bottom:11px}
+  .page-faq summary{font-size:14px;line-height:1.55}
+  .page-faq details p{font-size:13px;line-height:1.75}
+  .faq-layout{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+  .faq-photo{grid-row:auto!important;min-height:0!important;height:clamp(245px,70vw,320px)!important;border-radius:13px;overflow:hidden}
+  .faq-photo img{width:100%;height:100%;object-fit:cover}
+  .faq-list{grid-row:auto!important;min-width:0}
+  .faq-item{padding:16px!important;border-radius:12px!important;margin-bottom:10px}
+  .faq-item summary{font-size:14px;line-height:1.55}
+  .faq-item p{font-size:13px;line-height:1.75}
+  .contact-panel{padding:22px}
+  .contact-panel h2{font-size:30px}
+  .contact-panel p{font-size:13px;line-height:1.8}
+  .footer{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:27px 20px;gap:21px}
+  .footer>.brand{max-width:100%}
+  .footer>div{max-width:100%!important;text-align:left!important}
+  .footer .footer-nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;justify-content:stretch;padding-top:16px;border-top:1px solid rgba(198,161,91,.24)}
+  .footer .footer-nav a{padding:10px 0;font-size:12px}
+  .wa-float{right:12px;bottom:12px;padding:12px 14px;font-size:10px;letter-spacing:.03em;max-width:calc(100vw - 24px);border-radius:999px;box-shadow:0 5px 18px #0004}
+  .breadcrumb{font-size:9px;letter-spacing:.08em;line-height:1.7}
+  .button,.button-outline{min-height:46px;max-width:100%;white-space:normal;line-height:1.45;text-align:center}
+  [style*="grid-template-columns"]{min-width:0}
+  main{overflow:hidden}
+}
+@media(max-width:390px){
+  .nav{padding-left:12px;padding-right:12px}
+  .nav .brand-mark{width:33px;height:33px;flex-basis:33px}
+  .nav .brand-name{font-size:13px}
+  .nav .brand-sub{font-size:5.5px;letter-spacing:.12em}
+  .mobile-menu-toggle{padding:10px 11px;font-size:11px}
+  .hero-home{padding-left:17px;padding-right:17px}
+  .page-hero{padding-left:19px;padding-right:19px}
+  .section,.page-section{padding-left:17px!important;padding-right:17px!important}
+  .hero-home .hero-art{height:310px}
+  .hero-round-seal{width:68px;height:68px;font-size:6px}
+  .hero-round-seal b{font-size:14px}
+  .wa-float{font-size:9px;padding:11px 12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
 </style><meta name="theme-color" content="#17251b">
 </head><body><div class="topline">Gelenekten gelen ustalık · Her telinde emek</div>
 <header class="nav" id="site-nav">
   <a class="brand" href="index.html" aria-label="Alas Burma Kadayıf ana sayfa"><span class="brand-mark"><svg class="brand-logo" viewBox="0 0 72 72" role="img" aria-label="Alas Burma Kadayıf amblemi" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="goldLogo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1d18d"/><stop offset=".55" stop-color="#c6a15b"/><stop offset="1" stop-color="#9d7134"/></linearGradient></defs><path d="M36 5 C31 14 20 15 14 27 C8 39 14 53 25 58 L36 64 L47 58 C58 53 64 39 58 27 C52 15 41 14 36 5Z" fill="none" stroke="url(#goldLogo)" stroke-width="1.6"/><path d="M36 16 L19 51 L26 47 L36 27 L46 47 L53 51Z" fill="none" stroke="url(#goldLogo)" stroke-width="2.1" stroke-linejoin="round"/><path d="M26 43 Q36 37 46 43 M28 49 Q36 45 44 49" fill="none" stroke="url(#goldLogo)" stroke-width="1.3"/><path d="M36 5 L32 12 L36 10 L40 12Z M13 29 L20 28 L17 33Z M59 29 L52 28 L55 33Z" fill="url(#goldLogo)"/><circle cx="36" cy="19" r="2" fill="url(#goldLogo)"/><path d="M10 43 Q4 36 11 31 M62 43 Q68 36 61 31" fill="none" stroke="url(#goldLogo)" stroke-width="1.3" stroke-linecap="round"/></svg></span><span><span class="brand-name">ALAS <b>BURMA</b></span><span class="brand-sub">Kadayıf • Tatlı Ustalığı</span></span></a>
-  <nav class="navlinks" aria-label="Ana menü">
+  <button class="mobile-menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false"><span class="menu-glyph" aria-hidden="true">☰</span><span>Menü</span></button>
+  <nav class="navlinks" id="site-menu" aria-label="Ana menü">
     <a data-page="index.html" href="index.html">Anasayfa</a>
     <a data-page="hakkimizda.html" href="hakkimizda.html">Hakkımızda</a>
     <div class="nav-dropdown">
@@ -76,11 +232,11 @@
       </details>
       <details class="faq-item" style="background:#251902;border:1px solid #594629;border-radius:17px;padding:20px">
         <summary style="cursor:pointer;font-weight:bold">＋ En iyi lezzet için nasıl servis etmeliyim?</summary>
-        <p style="color:#d7cbb7;line-height:1.75">En iyi sunum için ürünü servis zamanına yakın açmanı öneririz. Ürünün teslimi sırasında verilen servis önerilerini dikkate al; uzun süre açıkta bırakmak dokusunu etkileyebilir.</p>
+        <p style="color:#d7cbb7;line-height:1.75">Kadayıfın katmanlı dokusunun ve aromasının keyfini çıkarmak için servis öncesinde oda sıcaklığında sunmanı öneririz. Misafire ikram edeceksen tepsiyi servise yakın açmak, çıtır görünümünü de korumaya yardımcı olur.</p>
       </details>
       <details class="faq-item" style="background:#251902;border:1px solid #594629;border-radius:17px;padding:20px">
         <summary style="cursor:pointer;font-weight:bold">＋ Kalan kadayıfı nasıl muhafaza etmeliyim?</summary>
-        <p style="color:#d7cbb7;line-height:1.75">Paket üzerinde veya teslim sırasında paylaşılan saklama önerilerini esas al. Ürünü doğrudan güneş alan bir yerde bırakma; uygun saklama koşulları ürünün durumuna göre değişebilir.</p>
+        <p style="color:#d7cbb7;line-height:1.75">Ürünü kapalı bir kapta, doğrudan güneş almayan serin ve kuru bir yerde muhafaza et. Tazelik ve saklama koşulları ürüne göre değişebileceğinden, teslim alırken verilen saklama önerilerini esas alman en iyisi.</p>
       </details>
       <details class="faq-item" style="background:#251902;border:1px solid #594629;border-radius:17px;padding:20px">
         <summary style="cursor:pointer;font-weight:bold">＋ Özel günler ve kalabalık sofralar için sipariş verebilir miyim?</summary>
@@ -135,8 +291,16 @@ function searchSite(event){
 (function(){
  const current=location.pathname.split('/').pop()||'index.html';
  document.querySelectorAll('[data-page]').forEach(a=>{if(a.dataset.page===current)a.classList.add('active');});
+ const header=document.querySelector('#site-nav');
+ const toggle=document.querySelector('.mobile-menu-toggle');
+ const menu=document.querySelector('#site-menu');
+ const dropdown=document.querySelector('.nav-dropdown');
  const trigger=document.querySelector('.dropdown-trigger');
- if(trigger){trigger.addEventListener('click',function(e){if(window.matchMedia('(max-width:850px)').matches){const parent=this.closest('.nav-dropdown');if(!parent.classList.contains('open')){e.preventDefault();parent.classList.add('open');}}});}
+ const closeMenu=()=>{header?.classList.remove('menu-open');toggle?.setAttribute('aria-expanded','false');toggle?.querySelector('.menu-glyph')?.replaceChildren(document.createTextNode('☰'));};
+ if(toggle&&header){toggle.addEventListener('click',()=>{const open=header.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',String(open));const glyph=toggle.querySelector('.menu-glyph');if(glyph)glyph.textContent=open?'×':'☰';});}
+ if(trigger&&dropdown){trigger.setAttribute('aria-expanded','false');trigger.addEventListener('click',function(e){if(window.matchMedia('(max-width:760px)').matches){if(!dropdown.classList.contains('open')){e.preventDefault();dropdown.classList.add('open');this.setAttribute('aria-expanded','true');}else if(e.detail===0){e.preventDefault();dropdown.classList.remove('open');this.setAttribute('aria-expanded','false');}}});}
+ menu?.querySelectorAll('a:not(.dropdown-trigger)').forEach(a=>a.addEventListener('click',closeMenu));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();dropdown?.classList.remove('open');trigger?.setAttribute('aria-expanded','false');}});
 })();
 </script>
 </body></html>

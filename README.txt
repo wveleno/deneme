@@ -1,22 +1,20 @@
-ALAS BURMA KADAYIF — SON ÖNİZLEME SÜRÜMÜ
+ALAS BURMA KADAYIF — MOBİL DÜZENLEMELİ SON ÖNİZLEME
 
 AÇMA
-1. ZIP dosyasını tamamen bir klasöre çıkar.
-2. Alas-Burma-Kadayif-Site klasörünü aç.
+1. ZIP dosyasını bilgisayarında bir klasöre çıkar.
+2. Alas-Burma-Kadayif-Mobil-Duzenleme klasörünü aç.
 3. index.html dosyasına çift tıkla.
-4. Üst menüdeki bağlantılar ilgili sayfaları açar; Kurumsal menüsünün alt seçenekleri fareyle üzerine gelince görünür.
-5. assets klasörünü index.html ile aynı klasörde tut. Ürün fotoğrafı buradan yüklenir.
+4. Mobil görünümü telefonunda kontrol etmek için dosyayı bir site barındırma servisine yüklemen gerekir; bilgisayarda önizlemek için Chrome pencere boyutunu daraltabilir veya geliştirici araçları cihaz görünümünü kullanabilirsin.
+5. assets klasörünü HTML dosyalarıyla aynı klasörde tut.
 
 SAYFALAR
 - index.html: Ana sayfa
 - hakkimizda.html: Hakkımızda
 - kurumsal.html: Kurumsal yaklaşım
 - kalite.html: Kalite anlayışı
-- urunler.html: Ürün sayfası
+- urunler.html: Ürünler
 - sss.html: Sık sorulan sorular
-- iletisim.html: İletişim ve konum
+- iletisim.html: İletişim
 - assets/burma-kadayif.png: Ürün fotoğrafı
 
-Arama kutusu ana sayfa, hakkımızda, kurumsal yaklaşım, kalite, ürünler, sık sorulanlar ve iletişim sayfalarında arama yapar.
-
-Bu önizleme yerel HTML dosyaları olarak çalışır. İnternette herkese açık yayın için ayrıca alan adı/hosting kurulumu gerekir.
+Mobil düzenlemeler: Hamburger menü, açılır kurumsal alt menü, tek sütun kartlar, mobil ölçülü başlıklar, görsel ölçekleme ve telefon uyumlu alt bölüm.
